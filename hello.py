@@ -10,7 +10,9 @@ app.config.update(
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path,'static'),'ico/favicon.ico')
-
+@app.route('/bounce')
+def bounce():
+    return render_template('bounce.html')
 @app.route('/')
 def index():
     return render_template('landing.html')

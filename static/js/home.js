@@ -1,7 +1,12 @@
-
 var g1,g2,g3,g4,g5,g6;
 window.onload=function(){
     console.log("in g1");
+
+    $("#g1").click(function () {
+            window.open($(this).find("a:first").attr("href"));
+            return false;
+            });
+
     var g1=new JustGage({id:"g1",value:getRandomInt(0,100),min:0,max:100,title:"Expected Bounce Rate",label:"",levelColors:["#990000","#ffa500","#008000"]});
 
     var g2=new JustGage({id:"g2",value:getRandomInt(0,100),min:0,max:100,title:"Expected Pages/Visit",label:"",levelColors:["#990000","#ffa500","#008000"]});
@@ -17,8 +22,8 @@ window.onload=function(){
             g4.refresh(getRandomInt(66, 100));
             g5.refresh(getRandomInt(66, 100));
             g6.refresh(getRandomInt(66, 100));
-            
-            
+
+
             }, 2500);
 
 
